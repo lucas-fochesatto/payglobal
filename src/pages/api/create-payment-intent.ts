@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 // This is your test secret API key.
-const stripe = require("stripe")('sk_test_51Os9NNL8p0uER8X6yqsgbBl3NGhPOjcjIXYp1dXWewwVg3xoC0Ahc0ymPUcN1Ea5rgW7fjIFjN1vtkVQ9nYPiRy400ZNnEtX1H');
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const calculateOrderAmount = (items : any) => {
   // Replace this constant with a calculation of the order's amount
